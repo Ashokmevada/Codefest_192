@@ -1,0 +1,36 @@
+package oops;
+import java.util.Scanner;
+public class Pseudo1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number");
+		int n = sc.nextInt();
+		for( int i =1 ; i <= n ; i++ )
+		{
+			if( i%3 == 0 || i%5 == 0 || i %15 == 0 )
+			{
+			if( i %15 == 0 )
+			{
+				System.out.println(  "3 and 5");
+			}
+			else if( i %5 == 0)
+			{
+				System.out.println( "5" );
+
+			}else if( i %3 == 0 )
+			{
+				System.out.println(  "3" );
+			}
+			System.out.println(func(i));
+			}
+		}
+	}
+	static int func( int n )
+	{
+		if( n == 0 ) return 1 ;
+		return ( n * func( n-1));
+	}
+
+}

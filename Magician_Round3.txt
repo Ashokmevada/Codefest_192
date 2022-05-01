@@ -1,0 +1,78 @@
+package oops;
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class Round_3 {
+
+	public static void main(String[] args) {
+	
+		Scanner sc = new Scanner(System.in);
+		HashSet<Integer>  set = new HashSet<>();
+		// Here matrix with the card numbers is being formed 
+		int [][] mat = new int[4][4];
+		int cnt = 1;
+		for(int i=0; i<4; i++) {
+			for(int j=0 ;j < 4; j++) {
+				mat[i][j] = cnt++;
+			}
+		}
+		// Here printing the matrix to select the card 
+		for( int i = 0 ; i < 4 ; i++)
+		{
+			for( int j = 0 ; j < 4 ; j++)
+			{
+				System.out.print(mat[i][j] + " ");
+			}
+			System.out.println();
+		}
+		
+		System.out.println("Tell me the row number of selected card");
+		int row = sc.nextInt();
+		
+		
+		// Here putting the values in a Set 
+		for(int j = 0;j<4 ;j++) {
+			set.add(mat[row-1][j]);
+		}
+		
+		// Here shuffling the cards again
+		int a =0 , b =1;
+		while( a<4 ) {
+			if(a==row-1) {
+				a++;
+				continue;
+			}else {
+				int temp = mat[a][0];
+				mat[a][0] = mat[row-1][b];
+				mat[row-1][b] = temp;
+				a++;
+				b++;
+			}
+		}
+		System.out.println("Select the row number of card selected earlier ");
+		// Here printing the shuffled matrix to select the card again  
+		for( int i = 0 ; i < 4 ; i++)
+		{
+			for( int j = 0 ; j < 4 ; j++)
+			{
+				System.out.print(mat[i][j] + " ");
+			}
+			System.out.println();
+		}
+		
+		// Here taking the new row of the selected card again 
+		int new_row = sc.nextInt();
+		
+		int ans =-1;
+		for(int i=0;i<4;i++) {
+			if(set.contains(mat[new_row-1][i])) {
+				ans = mat[new_row-1][i];
+				break;
+			}
+		}
+		
+		System.out.println("Your card is " + ans);
+
+	}
+
+}

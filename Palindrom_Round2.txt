@@ -1,0 +1,42 @@
+package oops;
+
+import java.util.Scanner;
+
+public class Pseudo_Code2 {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Enter the String");
+		Scanner sc = new Scanner(System.in);
+		String str = sc.next();
+		
+		String s = str.toLowerCase();
+		
+		int i =0;
+		int j = s.length()-1;
+		boolean flag = true;
+		
+		while(i<j) {
+			if(s.charAt(i) != s.charAt(j)) {
+				System.out.println("NO String is not palindrom");
+				flag = false;
+				break;
+			}else {
+				i++;
+				j--;
+				
+			}
+			
+			
+		}
+		
+		
+		if(flag) {
+			System.out.println("YES String is palindrom");
+		}
+		
+		
+
+	}
+
+}

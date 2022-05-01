@@ -1,0 +1,66 @@
+package oops;
+
+import java.util.Scanner;
+
+public class Fibonacci_Series {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println(" Enter the element of fibonacci series  ");
+		int ele = sc.nextInt();
+		int a = 0  , b = 1 ;
+		while( b < ele )
+		{
+			int c= a + b;
+				a = b ;
+				b = c ;
+		}
+		if( ele < 0)
+		{
+			System.out.println(" Enter valid fibonacci element ");
+		}
+		else if( a == 0 )
+		{
+			System.out.println("The element is part of fibonacci series");
+			for( int i = 1 ; i <= 5 ; i++)
+			{
+				System.out.print(b + " ");
+				int c= a + b;
+				a = b ;
+				b = c ;
+			}
+
+		}
+		else if( b == ele)
+		{
+			System.out.println("The element is part of fibonacci series");
+			int c = a+b;
+			a = b;
+			b = c;
+			for( int i = 1 ; i <= 5 ; i++)
+			{
+				System.out.print(b + " ");
+				 c= a + b;
+				a = b ;
+				b = c ;
+			}
+			
+		}else
+		{
+			System.out.println("The element is not a part of fibonacci series");
+			for( int i = 1 ; i <= 5 ; i++)
+			{
+				System.out.print(b + " ");
+				int c= a + b;
+				a = b ;
+				b = c ;
+			}
+
+		}
+		
+		
+
+	}
+
+}

@@ -1,0 +1,61 @@
+package oops;
+import java.util.Scanner ;
+public class Time_Conversion {
+
+	public static void main(String[] args) {
+		Scanner sc  = new Scanner(System.in);
+		System.out.println("Enter the hour ");
+		int hour = sc.nextInt();
+		System.out.println("Enter the minutes");
+		int minute = sc.nextInt();
+		System.out.println("Enter the time format ");
+		String str = sc.next();
+		int hr = 0 , min = minute ;
+		if( str.equals("AM"))
+		{	
+			if( hour == 12 )
+			{
+				hr = 0 ;
+				min = minute ;
+			}
+			else
+			{
+				hr = hour ;
+			}
+			
+		}
+		else
+		{
+			if( hour < 12)
+			{
+				hr = hour + 12 ;
+			}
+			else
+			{
+				hr = hour ;
+			}
+			
+		}
+		if( hr < 10)
+		{
+			System.out.print("0"+hr);
+		}
+		else
+		{
+			System.out.print(hr+"");
+		}
+		System.out.print(":");
+		if( min < 10)
+		{
+			System.out.print("0" + min);
+		}else
+		{
+			System.out.print(""+min);
+		}
+//		System.out.print(" " + str);
+
+
+
+	}
+
+}
